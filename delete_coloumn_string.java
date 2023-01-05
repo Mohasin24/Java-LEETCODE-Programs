@@ -1,3 +1,4 @@
+
 /* 
 Problem Statement : 
 You are given an array of n strings strs, all of the same length.
@@ -30,34 +31,29 @@ public class delete_coloumn_string
 {
     public static void main(String[] args) 
     {
-        String strs[] = {"abc", "bce", "cae"};
+        String strs[] = {"abce", "bcea", "caew"};
 
         int iRet = minDeletionSize(strs);
 
         System.out.println(iRet);
     }   
     
-    public static int minDeletionSize(String[] strs) {
-        // Initialize the delete count to 0
-        int deleteCount = 0;
-     
-        // Iterate through each column of the grid
-        for (int i = 0; i < strs.length; i++) {
-            // Iterate through each element in the column
-            for (int j = 1; j < strs[i].length(); j++) {
-                // If the current element is lexicographically smaller than the previous element,
-                // increment the delete if for e.g. 'c' comes before 'a' i.e. 'c>a' 
-                //delete count and break out of the loop
-                if (strs[j-1].charAt(i)>strs[j].charAt(i)) 
-                {   
-                    // System.out.println(strs[j-1].charAt(i));
-                    // System.out.println(strs[j].charAt(i));
-                    deleteCount++;
+    public static int minDeletionSize(String[] strs) 
+    {   
+        int cnt = 0;
+        for(int i = 0; i<strs[0].length(); i++)    
+        {   
+            int n = 0;
+            for(int j = 1; j<strs.length; j++)
+            {
+                if(strs[j-1].charAt(i)>strs[j].charAt(i))
+                {
+                    cnt++;
                     break;
                 }
             }
         }
-        // Return the delete count
-        return deleteCount;
+
+        return cnt;
     }
 }
