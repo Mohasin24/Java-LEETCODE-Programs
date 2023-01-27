@@ -17,18 +17,19 @@ public class transpose_matrix
     }
 
     public static int[][] transMatrix(int a[][])
-    {
-        int iRrr[][] = new int[a.length][a[0].length];
+    {   
+        // as number of rows and column may be different so swap it for creating new array
+        int A[][] = new int[a[0].length][a.length];
 
-        for(int i = 0; i<a.length; i++)
+        for(int i = 0; i<A.length; i++)    
         {
-            for(int j = 0; j<a[i].length;j++)
+            for(int j = 0; j<A[i].length; j++)
             {
-                iRrr[j][i]=a[i][j];
+                A[i][j]=a[j][i];
             }
         }
 
-        return iRrr;
+        return A;
     }
 
     public static void displayMatrix(int a[][])
