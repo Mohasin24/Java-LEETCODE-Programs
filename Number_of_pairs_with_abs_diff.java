@@ -40,29 +40,31 @@ class Solution
 {
     public int countKDifference(int[] nums, int k) 
     {
-        int res = 0;
-        int[] counts = new int[101];
+        int cnt = 0;
+        // for(int i = 0; i<nums.length; i++)
+        // {
+        // for(int j =i+1 ; j<nums.length; j++)
+        // {
+        // if(Math.abs(nums[i]-nums[j])==k)
+        // {
+        // cnt++;
+        // }
+
+        // }
+        // }
+
+        int arr[] = new int[101];
 
         for (int i = 0; i < nums.length; i++) 
         {
-            // counts[nums[i]] = counts[nums[i]] + 1;
-
-            counts[nums[i]]++;
-            // System.out.println(counts[nums[i]]);
-
-
+            arr[nums[i]]++;
         }
 
-        // System.out.println(Arrays.toString(counts));
-
-        for(int i = 0; i<nums.length; i++)
+        for (int i = arr.length - 1; i > k; i--) 
         {
-            
+            cnt = cnt + arr[i - k] * arr[i];
         }
-        for (int i = counts.length - 1; i >= k; i--) 
-        {
-            res += counts[i] * counts[i - k];
-        }
-        return res;
+
+        return cnt;
     }
 }
