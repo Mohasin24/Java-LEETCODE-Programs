@@ -44,7 +44,7 @@ public class Anagram {
                     return false;
                 }
             } 
-            return true;   
+            return true;    
         }
     }
 }
