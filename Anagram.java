@@ -39,7 +39,7 @@ public class Anagram {
                 
             for(int i = 0; i<a.length(); i++)
             {   
-                if(ch1[i]!=ch2[i])
+                if(ch1[i]!=ch2[i]) 
                 {
                     return false;
                 }
