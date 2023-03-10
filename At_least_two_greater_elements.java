@@ -60,12 +60,5 @@ public class At_least_two_greater_elements {
         // }
         // }
 
-        Arrays.sort(a);
 
-        for (int i = 0; i < (n - 2); i++) {
-
-            arr[i] = a[i];
-        }
-        return arr;
-    }
 }
