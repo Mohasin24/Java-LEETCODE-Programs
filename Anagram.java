@@ -19,7 +19,7 @@ public class Anagram {
 
         boolean iRet = isAnagram(a, b);
 
-        System.out.println(iRet);
+        System.out.println(iRet); 
     }
 
     public static boolean isAnagram(String a, String b) {
