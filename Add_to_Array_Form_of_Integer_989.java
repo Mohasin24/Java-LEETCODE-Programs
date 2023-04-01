@@ -59,7 +59,7 @@ class Solution {
             }
             res.add(k%10);     // res.add(10%10) = res.add(0)
             k = k/10;             // k = k/10 = 10/10 = 1 
-        } 
+        }              
         
         Collections.reverse(res);
 
