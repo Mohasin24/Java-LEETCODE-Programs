@@ -23,7 +23,7 @@ Input: num = [2,1,5], k = 806
 Output: [1,0,2,1]
 Explanation: 215 + 806 = 1021
  
-
+      
 Constraints:
 
 1 <= num.length <= 104
