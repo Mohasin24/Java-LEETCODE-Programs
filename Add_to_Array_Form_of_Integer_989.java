@@ -7,7 +7,7 @@ Given num, the array-form of an integer, and an integer k, return the array-form
 
                                                           
 
-Example 1:
+Example 1:                     
 
 Input: num = [1,2,0,0], k = 34
 Output: [1,2,3,4]
