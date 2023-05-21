@@ -20,7 +20,7 @@ Constraints:
 a and b consist only of '0' or '1' characters.
 Each string does not contain leading zeros except for the zero itself.
 */
-
+                 
 public class Add_Binary_67 
 {
     public static void main(String[] args) 
