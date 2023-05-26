@@ -40,57 +40,13 @@ public class Group_the_People_Given_the_Group_Size_They_Belong_To_1282
 {
     public static void main(String[] args)
     {
-        Solution sl = new Solution();
+        Solution3 sl = new Solution3();
         
         sl.groupThePeople(new int[] {3,3,3,3,3,1,3});
     }    
 }
 
 class Solution {
-    // public List<List<Integer>> groupThePeople(int[] g) 
-    // {
-    //     List<List<Integer>> out = new ArrayList<List<Integer>>();
-
-    //     HashMap<Integer, ArrayList<Integer>> hm = new HashMap<>();
-
-    //     for(int i = 0; i<g.length; i++)
-    //     {
-    //         if(!hm.containsKey(g[i]))
-    //         {
-    //             hm.put(g[i], new ArrayList<>());
-    //         }
-
-    //         hm.get(g[i]).add(i);
-    //     }
-
-    //     for(int s : hm.keySet())
-    //     {
-    //         int size = hm.get(s).size();
-
-    //         int len = 0;
-    //         ArrayList<Integer> in = new ArrayList<>();
-
-    //         for(int i = 0; i<size;)
-    //         {
-
-    //             if(len<s)
-    //             {
-    //                 in.add(hm.get(s).get(i));
-    //                 len++;
-    //                 i++;
-    //             }
-    //             else
-    //             {
-    //                 len = 0;
-    //                 out.add(in);
-    //                 in = new ArrayList<>();
-    //             }
-    //         }
-    //     }
-
-    //     display(out);
-    //     return out;
-    // }
 
        public List<List<Integer>> groupThePeople(int[] groupSizes) 
        {
@@ -146,4 +102,124 @@ class Solution {
         }
     }
 }
+
+class Solution1
+{
+    public List<List<Integer>> groupThePeople(int[] groupSizes) 
+    {
+        List<List<Integer>> lists = new ArrayList<>();
+
+        int[] check = new int[500];
+
+        for(int i = 0; i < groupSizes.length; i++)
+        {
+            int size = groupSizes[i];
+
+            if(check[size] == 0)
+            {
+                List<Integer> temp = new ArrayList<>(size);
+                for(int j = i; j < groupSizes.length; j++)
+                {
+                    if(groupSizes[j] == size){
+                        temp.add(j);
+                        if(temp.size() == size)
+                        {
+                            lists.add(temp);
+                            temp = new ArrayList(size);
+                        }
+                    }
+                }
+
+                if(temp.size() != 0) 
+                    lists.add(temp);
+            }
+
+            ++check[groupSizes[i]];
+        }
+
+        return lists;
+        
+
+    }
+
+
+}
+
+
+class Solution3
+{
+    public List<List<Integer>> groupThePeople(int[] g) 
+    {
+        List<List<Integer>> out = new ArrayList<List<Integer>>();
+
+        HashMap<Integer, ArrayList<Integer>> hm = new HashMap<>();
+
+        for(int i = 0; i<g.length; i++)
+        {
+            if(!hm.containsKey(g[i]))
+            {
+                hm.put(g[i], new ArrayList<>());
+            }
+
+            hm.get(g[i]).add(i);
+        }
+
+        for(int s : hm.keySet())
+        {
+            int size = hm.get(s).size();
+
+            ArrayList<Integer> in = new ArrayList<>();
+
+            for(int i = 0; i<size;)
+            {
+
+                if(in.size()<s)
+                {
+                    in.add(hm.get(s).get(i));
+                    i++;
+                }
+                
+                if(in.size()==s)
+                {
+                    out.add(in);
+                    in = new ArrayList<>();
+                }
+            }
+        }
+
+        display(out);
+        return out;
+    }
+
+    private int findMax(int[] a)
+    {
+        int max = a[0];
+
+        for(int i = 1; i<a.length; i++)
+        {
+            if(a[i]>max)
+            {
+                max = a[i];
+            }
+        }
+
+        return max;
+    }
+
+    private void display(List<List<Integer>> out )
+    {
+        for(int i = 0; i<out.size(); i++)
+        {
+            for(int j = 0; j<out.get(i).size(); j++)
+            {
+                System.out.print(out.get(i).get(j) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
 
