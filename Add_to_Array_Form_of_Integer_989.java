@@ -10,7 +10,7 @@ Given num, the array-form of an integer, and an integer k, return the array-form
 Example 1:                     
     
 Input: num = [1,2,0,0], k = 34
-Output: [1,2,3,4]
+Output: [1,2,3,4]   
 Explanation: 1200 + 34 = 1234
 Example 2:
 
