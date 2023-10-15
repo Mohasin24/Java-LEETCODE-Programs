@@ -6,7 +6,7 @@ public class All_Sorting_Example
     {
         int[] arr = new int[] {4,1,5,2,3,7,6,10,9,12,11,8};
 
-        SortingAlgo obj = new SortingAlgo();
+        SortingAlgo obj = new SortingAlgo();           
 
 //        obj.Bubble_Sort(arr);
 //        obj.Selection_Sort(arr);
